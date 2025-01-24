@@ -1,0 +1,7 @@
+﻿*.csproj
+Temp
+.vscode
+Library
+Logs
+UserSettings
+Golf.sln
