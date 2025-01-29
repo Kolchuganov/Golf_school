@@ -26,14 +26,19 @@ namespace Golf
             stick.localRotation = rot;
         }
 
-        public void OnCollisionStick(Collider collider)
-        {
-            if (collider.TryGetComponent(out Rigidbody stone))
-            {
-                //var dir = m_isDown ? stick.right : -stick.right;
-                var dir = (helper.position - m_lastPosition).normalized;
-                stone.AddForce(dir * power, ForceMode.Impulse);
-            }
+public void OnCollisionStick(Collider collider)
+{
+    if (collider.TryGetComponent(out Rigidbody body))
+    {
+        var dir = (helper.position - m_lastPosition).normalized;
+        body.AddForce(dir * power, ForceMode.Impulse);
+
+
+    if (collider.TryGetComponent(out Stone stone))
+    {
+        stone.isAffect = true;
+    }
+}
 
             Debug.Log(collider, this);
         }
