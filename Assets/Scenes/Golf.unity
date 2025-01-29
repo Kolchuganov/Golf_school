@@ -11916,7 +11916,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 591514530}
-  delay: 0.5
+  delayMax: 2
+  delayMin: 0.5
+  delayStep: 0.1
 --- !u!4 &1523419975
 Transform:
   m_ObjectHideFlags: 0
