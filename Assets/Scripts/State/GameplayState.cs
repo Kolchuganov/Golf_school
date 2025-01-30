@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace Golf
 {
@@ -8,8 +9,8 @@ namespace Golf
     {
         public LevelController levelController;
         public PlayerController playerController;
-
         public GameState gameOverState;
+        public TMP_Text scoreText;
 
         protected override void OnEnable()
         {
@@ -18,16 +19,23 @@ namespace Golf
             playerController.enabled = true;
 
             GameEvents.onCollisionStone += OnGameOver;
+            GameEvents.onStickHit += OnStickHit;
         }
+
+        private void OnStickHit()
+        {
+            scoreText.text = $"Score : {levelController.score}";
+        }
+
         private void OnGameOver()
         {
             Exit();
-            gameOverState.Enter(); 
+            gameOverState.Enter();
         }
+
         protected override void OnDisable()
         {
             base.OnDisable();
-
             GameEvents.onCollisionStone -= OnGameOver;
 
             levelController.enabled = false;
