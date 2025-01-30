@@ -34,9 +34,10 @@ public void OnCollisionStick(Collider collider)
         body.AddForce(dir * power, ForceMode.Impulse);
 
 
-    if (collider.TryGetComponent(out Stone stone))
+    if (collider.TryGetComponent(out Stone stone) && !stone.isAffect)
     {
         stone.isAffect = true;
+        GameEvents.StickHit();
     }
 }
 
