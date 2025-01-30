@@ -8,7 +8,17 @@ namespace Golf
     {
         public List<GameObject> views;
 
-        private void OnEnable()
+        public virtual void Enter()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void Exit()
+        {
+            gameObject.SetActive(false);
+        }
+
+        protected virtual void OnEnable()
         {
             foreach (var item in views)
             {
@@ -16,11 +26,14 @@ namespace Golf
             }
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             foreach (var item in views)
             {
-                item.SetActive(false);
+                if (item)
+                {
+                    item.SetActive(false);
+                }
             }
         }
     }

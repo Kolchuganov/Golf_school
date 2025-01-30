@@ -3586,6 +3586,8 @@ MonoBehaviour:
   views:
   - {fileID: 2015784227}
   - {fileID: 560629522}
+  levelController: {fileID: 1523419974}
+  playerController: {fileID: 578460447}
 --- !u!1001 &457368148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4554,7 +4556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &578460447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11284,7 +11286,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1362042982}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1577820513}
+        m_TargetAssemblyTypeName: Golf.MainMenuState, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1362042982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12635,7 +12649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1523419974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13181,6 +13195,7 @@ MonoBehaviour:
   views:
   - {fileID: 1362042979}
   - {fileID: 2015784227}
+  gamePlayState: {fileID: 457098082}
 --- !u!1001 &1589324303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17982,7 +17997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704e017ff3ade3546912bb127ce2bbce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuState: {fileID: 0}
+  mainMenuState: {fileID: 1577820513}
 --- !u!4 &2067314352
 Transform:
   m_ObjectHideFlags: 0

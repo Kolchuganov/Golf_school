@@ -31,13 +31,11 @@ namespace Golf
 
         private void OnEnable()
         {
-            GameEvents.onCollisionStone += GameOver;
             GameEvents.onStickHit += OnStickHit;
         }
 
         private void OnDisable()
         {
-            GameEvents.onCollisionStone -= GameOver;
             GameEvents.onStickHit -= OnStickHit;
         }
 
